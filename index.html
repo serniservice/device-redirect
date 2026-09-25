@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    (function () {
+      // 1. Change your target URLs here:
+      const MOBILE_URL = "https://www.mobile.com";
+      const DESKTOP_URL = "https://www.desk.com";
+
+      // 2. Mobile device detection
+      const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isTouchMac = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+
+      // 3. Choose redirect URL
+      const destination = (isMobileUA || isTouchMac) ? MOBILE_URL : DESKTOP_URL;
+
+      // 4. Instant redirect (replace prevents back-button trapping)
+      window.location.replace(destination);
+    })();
+  </script>
+</head>
+<body>
+  <noscript>
+    <p>Please select your version:</p>
+    <ul>
+      <li><a href="https://www.mobile.com">Mobile Version</a></li>
+      <li><a href="https://www.desk.com">Desktop Version</a></li>
+    </ul>
+  </noscript>
+</body>
+</html>
